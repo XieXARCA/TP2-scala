@@ -17,13 +17,13 @@ public class PcfBaseListener implements PcfListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterParExp(PcfParser.ParExpContext ctx) { }
+	@Override public void enterApp(PcfParser.AppContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitParExp(PcfParser.ParExpContext ctx) { }
+	@Override public void exitApp(PcfParser.AppContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -41,18 +41,6 @@ public class PcfBaseListener implements PcfListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterBinaryExp1(PcfParser.BinaryExp1Context ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitBinaryExp1(PcfParser.BinaryExp1Context ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterVar(PcfParser.VarContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -60,18 +48,6 @@ public class PcfBaseListener implements PcfListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitVar(PcfParser.VarContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterBinaryExp2(PcfParser.BinaryExp2Context ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitBinaryExp2(PcfParser.BinaryExp2Context ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -89,6 +65,42 @@ public class PcfBaseListener implements PcfListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterBinaryTerm2(PcfParser.BinaryTerm2Context ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitBinaryTerm2(PcfParser.BinaryTerm2Context ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterParTerm(PcfParser.ParTermContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitParTerm(PcfParser.ParTermContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterBinaryTerm1(PcfParser.BinaryTerm1Context ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitBinaryTerm1(PcfParser.BinaryTerm1Context ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterIfZero(PcfParser.IfZeroContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -96,6 +108,18 @@ public class PcfBaseListener implements PcfListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitIfZero(PcfParser.IfZeroContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterFun(PcfParser.FunContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitFun(PcfParser.FunContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

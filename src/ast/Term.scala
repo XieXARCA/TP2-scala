@@ -7,6 +7,8 @@ enum Term:
   case Var(name: String)
   case Let(name: String, term1: Term, term2: Term)
   case ParTerm(lpar: Par, term: Term, rpar: Par)
+  case Fun(name: String , term: Term)
+  case App(term1: Term, term2: Term)
 
 enum Op:
   case Plus, Minus, Multiply, Divide

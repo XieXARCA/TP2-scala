@@ -4,6 +4,7 @@ import ast.Term
 import Term.*
 import ast.Op
 import ast.Op.{Divide, Minus, Multiply, Plus}
+import ast.Par.{LPAR, RPAR}
 
 object Evaluator :
 
@@ -38,6 +39,10 @@ object Evaluator :
         case IfZero( tB1, tB2, Var(name)) => eval( IfZero(tB1, tB2, tA1), e)
 
     case ParTerm(lpar, term, rpar) => eval(term, e)
-
+    case App(tA1, tA2) =>
+      tA1 match
+        case ParTerm(LPAR, Fun(name, tB1), RPAR) => eval(Let(name, tA2, tB1),e)
+        case Fun(name, tB1) => eval(Let(name, tA2, tB1),e)
+        case _ => ???
     case _ => ???
 

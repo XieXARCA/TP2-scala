@@ -8,6 +8,8 @@ term: NUMBER                            # Number
    | '(' term ')'                       # ParTerm
    | 'let' ID '=' term 'in' term        # Let
    | ID                                 # Var
+   | 'fun' ID '->' term                 # Fun
+   | term term                          # App
    ;
 
 // regle lexicale

@@ -11,12 +11,12 @@ import org.antlr.v4.runtime.tree.ParseTreeVisitor;
  */
 public interface PcfVisitor<T> extends ParseTreeVisitor<T> {
 	/**
-	 * Visit a parse tree produced by the {@code ParExp}
+	 * Visit a parse tree produced by the {@code App}
 	 * labeled alternative in {@link PcfParser#term}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitParExp(PcfParser.ParExpContext ctx);
+	T visitApp(PcfParser.AppContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code Number}
 	 * labeled alternative in {@link PcfParser#term}.
@@ -25,26 +25,12 @@ public interface PcfVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitNumber(PcfParser.NumberContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code BinaryExp1}
-	 * labeled alternative in {@link PcfParser#term}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitBinaryExp1(PcfParser.BinaryExp1Context ctx);
-	/**
 	 * Visit a parse tree produced by the {@code Var}
 	 * labeled alternative in {@link PcfParser#term}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitVar(PcfParser.VarContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code BinaryExp2}
-	 * labeled alternative in {@link PcfParser#term}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitBinaryExp2(PcfParser.BinaryExp2Context ctx);
 	/**
 	 * Visit a parse tree produced by the {@code Let}
 	 * labeled alternative in {@link PcfParser#term}.
@@ -53,10 +39,38 @@ public interface PcfVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitLet(PcfParser.LetContext ctx);
 	/**
+	 * Visit a parse tree produced by the {@code BinaryTerm2}
+	 * labeled alternative in {@link PcfParser#term}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitBinaryTerm2(PcfParser.BinaryTerm2Context ctx);
+	/**
+	 * Visit a parse tree produced by the {@code ParTerm}
+	 * labeled alternative in {@link PcfParser#term}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitParTerm(PcfParser.ParTermContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code BinaryTerm1}
+	 * labeled alternative in {@link PcfParser#term}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitBinaryTerm1(PcfParser.BinaryTerm1Context ctx);
+	/**
 	 * Visit a parse tree produced by the {@code IfZero}
 	 * labeled alternative in {@link PcfParser#term}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitIfZero(PcfParser.IfZeroContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code Fun}
+	 * labeled alternative in {@link PcfParser#term}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitFun(PcfParser.FunContext ctx);
 }

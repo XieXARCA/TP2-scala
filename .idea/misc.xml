@@ -23,6 +23,26 @@
           <option name="language" value="" />
           <option name="generateVisitor" value="true" />
         </PerGrammarGenerationSettings>
+        <PerGrammarGenerationSettings>
+          <option name="fileName" value="$PROJECT_DIR$/src/parser/Pcf.g4" />
+          <option name="autoGen" value="true" />
+          <option name="outputDir" value="C:\Users\samso\Documents\A3\compilation et interprétation\Pcf\src" />
+          <option name="libDir" value="" />
+          <option name="encoding" value="" />
+          <option name="pkg" value="parser" />
+          <option name="language" value="" />
+          <option name="generateVisitor" value="true" />
+        </PerGrammarGenerationSettings>
+        <PerGrammarGenerationSettings>
+          <option name="fileName" value="$PROJECT_DIR$/src/parser/Pcf.g4" />
+          <option name="autoGen" value="true" />
+          <option name="outputDir" value="C:\Users\samso\Documents\A3\compilation et interprétation\Pcf\src" />
+          <option name="libDir" value="" />
+          <option name="encoding" value="" />
+          <option name="pkg" value="parser" />
+          <option name="language" value="" />
+          <option name="generateVisitor" value="true" />
+        </PerGrammarGenerationSettings>
       </list>
     </option>
   </component>
