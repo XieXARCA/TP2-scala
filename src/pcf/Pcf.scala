@@ -2,6 +2,7 @@ package pcf
 
 import parser.AbstractParser.analyze
 import evaluator.Evaluator.eval
+import ast.Value.toInt
 
 import java.io.{FileInputStream, InputStream}
 
@@ -14,7 +15,7 @@ object Pcf:
         FileInputStream(args(0))
         
     val term = analyze(in)
-    println(s"==> ${eval(term, Map())}")
+    println(s"==> ${toInt(eval(term, Map()))}")
 
 
 
