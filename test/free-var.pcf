@@ -1,0 +1,1 @@
+let a = 10 in (fun x -> x + a) 5

@@ -1,0 +1,1 @@
+let twice = fun f -> fun x -> f (f x) in twice (fun n -> n * 3) 2
