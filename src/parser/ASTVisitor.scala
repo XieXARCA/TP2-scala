@@ -62,3 +62,8 @@ class ASTVisitor extends PcfBaseVisitor[Term] :
       for (concreteTerm <- concreteTerms) yield
         visit(concreteTerm)
     App(term1, term2)
+
+  override def visitFix(ctx: PcfParser.FixContext): Term =
+    val term = visit(ctx.term)
+    val name = ctx.ID().getText
+    Fix(name, term)

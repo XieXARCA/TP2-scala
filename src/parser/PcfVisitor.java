@@ -25,6 +25,13 @@ public interface PcfVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitNumber(PcfParser.NumberContext ctx);
 	/**
+	 * Visit a parse tree produced by the {@code Fix}
+	 * labeled alternative in {@link PcfParser#term}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitFix(PcfParser.FixContext ctx);
+	/**
 	 * Visit a parse tree produced by the {@code Var}
 	 * labeled alternative in {@link PcfParser#term}.
 	 * @param ctx the parse tree

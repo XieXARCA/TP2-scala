@@ -10,6 +10,7 @@ term: NUMBER                            # Number
    | ID                                 # Var
    | 'fun' ID '->' term                 # Fun
    | term term                          # App
+   | 'fix' ID term                      # Fix
    ;
 
 // regle lexicale

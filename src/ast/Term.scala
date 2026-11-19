@@ -9,6 +9,7 @@ enum Term:
   case ParTerm(lpar: Par, term: Term, rpar: Par)
   case Fun(name: String , term: Term)
   case App(term1: Term, term2: Term)
+  case Fix(name: String, term: Term)
 
 enum Op:
   case Plus, Minus, Multiply, Divide
@@ -16,13 +17,12 @@ enum Op:
 enum Value:
   case Vint(i: Int)
   case Vfun(name: String, body: Term, env: Map[String , Value])
+  case Vice(name: String, body: Term, env: Map[String, Value])
 
 object Value:
   def toInt(value: Value): Int = value match
     case Vint(x) => x
     case _ => ???
-
-
 
 enum Par:
   case LPAR, RPAR
