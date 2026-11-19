@@ -1,0 +1,1 @@
+let add = fix f fun a -> fun b -> ifz b then a else (f (a + 1)) (b - 1) in add 3 4

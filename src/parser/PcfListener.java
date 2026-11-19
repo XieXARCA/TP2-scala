@@ -32,6 +32,18 @@ public interface PcfListener extends ParseTreeListener {
 	 */
 	void exitNumber(PcfParser.NumberContext ctx);
 	/**
+	 * Enter a parse tree produced by the {@code Fix}
+	 * labeled alternative in {@link PcfParser#term}.
+	 * @param ctx the parse tree
+	 */
+	void enterFix(PcfParser.FixContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code Fix}
+	 * labeled alternative in {@link PcfParser#term}.
+	 * @param ctx the parse tree
+	 */
+	void exitFix(PcfParser.FixContext ctx);
+	/**
 	 * Enter a parse tree produced by the {@code Var}
 	 * labeled alternative in {@link PcfParser#term}.
 	 * @param ctx the parse tree

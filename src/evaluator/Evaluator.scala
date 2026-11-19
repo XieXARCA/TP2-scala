@@ -12,10 +12,12 @@ object Evaluator:
   enum Value:
     case VInt(n: Int)
     case VFun(param: String, body: Term, defEnv: Map[String, Value])
+    case VFix(name: String, body: Term, defEnv: Map[String, Value])
 
     override def toString: String = this match
       case VInt(n)       => n.toString
       case VFun(p, _, _) => s"<fonction $p -> ...>"
+      case VFix(x, _, _) => s"<point fixe $x>"
 
   import Value.*
 
@@ -50,21 +52,27 @@ object Evaluator:
 
     case App(t1, t2) =>
       val arg = eval(t2, e)
-      eval(t1, e) match
+      force(eval(t1, e)) match
         case VFun(param, body, defEnv) =>
           eval(body, defEnv + (param -> arg))
-        case VInt(n) =>
-          throw EvalError(s"$n n'est pas une fonction : impossible de lui appliquer $arg")
+        case other =>
+          throw EvalError(s"$other n'est pas une fonction : impossible de lui appliquer $arg")
 
-  private def asInt(v: Value, op: Op): Int = v match
-    case VInt(n) => n
-    case VFun(_, _, _) =>
-      throw EvalError(s"operande invalide pour ${symbol(op)} : $v n'est pas un entier")
+    case Fix(name, body) =>
+      eval(body, e + (name -> VFix(name, body, e)))
 
-  private def asIntTest(v: Value): Int = v match
+  private def force(v: Value): Value = v match
+    case VFix(name, body, defEnv) => force(eval(body, defEnv + (name -> v)))
+    case other                    => other
+
+  private def asInt(v: Value, op: Op): Int = force(v) match
     case VInt(n) => n
-    case VFun(_, _, _) =>
-      throw EvalError(s"le test de ifz doit etre un entier, et non $v")
+    case other   =>
+      throw EvalError(s"operande invalide pour ${symbol(op)} : $other n'est pas un entier")
+
+  private def asIntTest(v: Value): Int = force(v) match
+    case VInt(n) => n
+    case other   => throw EvalError(s"le test de ifz doit etre un entier, et non $other")
 
   private def symbol(op: Op): String = op match
     case Plus => "+" ; case Minus => "-" ; case Multiply => "*" ; case Divide => "/"

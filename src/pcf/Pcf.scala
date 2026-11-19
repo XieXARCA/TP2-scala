@@ -21,3 +21,5 @@ object Pcf:
     catch
       case e: SyntaxError => println(s"Erreur de syntaxe : ${e.getMessage}")
       case e: EvalError   => println(s"Erreur d'evaluation : ${e.getMessage}")
+      case _: StackOverflowError =>
+        println("Erreur d'evaluation : recursion infinie (pile saturee)")

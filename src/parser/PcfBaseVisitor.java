@@ -32,6 +32,13 @@ public class PcfBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements Pc
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
+	@Override public T visitFix(PcfParser.FixContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
 	@Override public T visitVar(PcfParser.VarContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}

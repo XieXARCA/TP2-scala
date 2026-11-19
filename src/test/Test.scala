@@ -13,6 +13,10 @@ def test(): Unit =
     "test/higher-order.pcf",
     "test/free-var.pcf",
     "test/twice.pcf",
+    "test/factorial.pcf",
+    "test/fibonacci.pcf",
+    "test/sum-rec.pcf",
+    "test/curry-rec.pcf",
     "test/error-not-a-function.pcf"
   )
   for file <- examples do

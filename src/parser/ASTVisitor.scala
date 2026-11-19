@@ -54,6 +54,11 @@ class ASTVisitor extends PcfBaseVisitor[Term] :
     val param = ctx.ID().getText
     Fun(param, body)
 
+  override def visitFix(ctx: PcfParser.FixContext): Term =
+    val name = ctx.ID().getText
+    val body = visit(ctx.term)
+    Fix(name, body)
+
   override def visitApp(ctx: PcfParser.AppContext): Term =
     val concreteTerms = ctx.term.asScala.toList
     val List(term1, term2) =

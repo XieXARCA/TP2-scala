@@ -10,6 +10,7 @@ term: NUMBER                            # Number
    | 'ifz' term 'then' term 'else' term # IfZero
    | 'let' ID '=' term 'in' term        # Let
    | 'fun' ID '->' term                 # Fun
+   | 'fix' ID term                      # Fix
    ;
 
 // regle lexicale

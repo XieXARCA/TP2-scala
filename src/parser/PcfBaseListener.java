@@ -41,6 +41,18 @@ public class PcfBaseListener implements PcfListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterFix(PcfParser.FixContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitFix(PcfParser.FixContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterVar(PcfParser.VarContext ctx) { }
 	/**
 	 * {@inheritDoc}
