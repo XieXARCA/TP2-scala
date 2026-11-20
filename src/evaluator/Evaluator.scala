@@ -24,7 +24,9 @@ object Evaluator :
         case Plus => Vint(toInt(v1) + toInt(v2))
         case Minus => Vint(toInt(v1) - toInt(v2))
         case Multiply => Vint(toInt(v1) * toInt(v2))
-        case Divide => Vint(toInt(v1) / toInt(v2))
+        case Divide =>
+          if toInt(v2) == 0 then throw Exception("division by zero")
+          else Vint(toInt(v1) / toInt(v2))
 
     case Var(name) => e.getOrElse(name, throw Exception(f" ${Var(name)}%s not associated to any value"))
 
